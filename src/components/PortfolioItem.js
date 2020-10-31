@@ -5,17 +5,17 @@ import PortfolioTechnology from './PortfolioTechnology';
 class PortfolioItem extends Component {
     render() {
         return (
-            <div id={this.props.id} class='container-portfolio'>
-              <a href={this.props.technologyLink} target='_blank' rel='noopener noreferrer'><img class='image-logo-portfolio' src={this.props.technologyImage} alt={this.props.technologyImageAlt}/></a>
-              <div class='container-portfolio-text'>
-                  <h3>{this.props.title}</h3>
+            <div id={this.props.id} className='container-portfolio'>
+              <a href={this.props.technologyLink} target='_blank' rel='noopener noreferrer'><img className='image-logo-portfolio' src={this.props.technologyImage} alt={this.props.technologyImageAlt}/></a>
+              <div className='container-portfolio-text'>
+                  <h3><a className='portfolio-header-link' href={this.props.link} target='_blank' rel='noopener noreferrer'>{this.props.title}</a></h3>
                   <p>{this.props.description}</p>
                   <p>
-                    <span class='label-technologies'>Technologies:</span>
-                    {this.props.technologies.map(technology => <PortfolioTechnology title={technology}/>)}
+                    <span className='label-technologies'>Technologies:</span>
+                    {this.props.technologies.map((technology, index) => <PortfolioTechnology key={`${this.props.id}-technology-${index}`}title={technology}/>)}
                   </p>
-                  <p class='paragraph-small'><span class='label-links'>Links:</span></p>
-                  {this.props.links.map(link => <PortfolioLink link={link.link} image={link.image} imageAlt={link.imageAlt}/>)}
+                  <p className='paragraph-small'><span className='label-links'>Links:</span></p>
+                  {this.props.links.map((link,index) => <PortfolioLink key={`${this.props.id}-link-${index}`}link={link.link} image={link.image} imageAlt={link.imageAlt}/>)}
               </div>
           </div>
         );

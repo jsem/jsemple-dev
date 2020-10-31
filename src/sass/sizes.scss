@@ -1,0 +1,23 @@
+/* Fixed sizes for the website */
+
+//baseline sizes
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 30px;
+$spacing-extra-large: 40px;
+
+//container sizes
+$container-app-width: 900px;
+$container-header-padding: $spacing-extra-large;
+$container-portfolio-padding: $spacing-medium;
+$container-section-padding: $spacing-large;
+
+//image sizes
+$image-portfolio-link-height: 12px;
+$image-portfolio-link-width: 12px;
+$image-portfolio-height: 250px;
+$image-portfolio-width: 250px;
+$image-portolio-margin: $spacing-extra-large;
+
+//calculated fields
+$container-portfolio-text-width: $container-app-width - ($container-section-padding * 2) - ($container-portfolio-padding * 2) - $image-portfolio-width - $image-portolio-margin;

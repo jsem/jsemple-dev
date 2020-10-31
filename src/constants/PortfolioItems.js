@@ -1,8 +1,11 @@
+import { WebsiteLink, WebsiteTitle } from './Constants';
+
 const portfolioItems = [
     {
-        id: 'jsemple-dev',
-        title: 'jsemple.dev',
-        description: 'Simple project for this website.',
+        id: WebsiteTitle,
+        title: WebsiteTitle,
+        description: 'ReactJS project for this website.',
+        link: WebsiteLink,
         technologyLink: 'https://reactjs.org/',
         technologyImage: 'images/react-logo.png',
         technologyImageAlt: 'react logo',
@@ -20,9 +23,10 @@ const portfolioItems = [
         ],
     },
     {
-        id: 'springboot-microservices',
-        title: 'Springboot Microservices',
-        description: 'A microservices based architecture project.',
+        id: 'springboot-webapp',
+        title: 'Springboot Webapp',
+        description: 'A springboot based web project. Includes a front end angular web app and a backend springboot app.',
+        link: WebsiteLink,
         technologyLink: 'https://spring.io/projects/spring-boot',
         technologyImage: 'images/springboot-logo.png',
         technologyImageAlt: 'springboot logo',
@@ -32,7 +36,6 @@ const portfolioItems = [
             'springboot',
             'hibernate',
             'angular',
-            'microservices',
         ],
         links: [
             {
@@ -51,6 +54,7 @@ const portfolioItems = [
         id: 'ansible-infrastructure-as-code',
         title: 'Ansible IAC',
         description: 'An infrastructure as code project using ansible.',
+        link: WebsiteLink,
         technologyLink: 'https://www.ansible.com/',
         technologyImage: 'images/ansible-logo.png',
         technologyImageAlt: 'ansible logo',

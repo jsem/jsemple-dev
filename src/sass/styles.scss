@@ -4,9 +4,16 @@
 @import "colors.scss";
 @import "fonts.scss";
 @import "reset.scss";
+@import "sizes.scss";
 
 a {
     color: inherit;
+    transition: all 1s ease;
+
+    &:hover {
+        color: $color-text-light-hover;
+        cursor: pointer;
+    }
 }
 
 body {
@@ -20,24 +27,42 @@ h1 {
 
 h2 {
     @include font-h2;
-    padding: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: $spacing-medium;
+    padding-left: $spacing-small;
+    padding-right: $spacing-small;
 }
 
 h3 {
     @include font-h3;
-    padding: 10px;
+    padding: $spacing-small;
 }
 
 p {
-    padding: 10px;
+    padding: $spacing-small;
 }
 
 /* Containers */
+.container-app {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    width: $container-app-width;
+}
+
+.container-footer {
+    background: $color-background-footer;
+    box-sizing: border-box;
+}
+
+.container-footer-inner {
+    box-sizing: border-box;
+    padding: $container-section-padding;
+}
+
 .container-header {
     background: $color-background-header;
-    padding: 40px;
+    box-sizing: border-box;
+    padding: $container-header-padding;
 
     h1 {
         color: $color-text-header;
@@ -46,18 +71,25 @@ p {
 }
 
 .container-portfolio {
-    padding: 20px;
+    box-sizing: border-box;
+    padding: $spacing-medium;
 }
 
 .container-portfolio-text {
+    box-sizing: border-box;
     display: inline-block;
+    padding-top: $spacing-medium;
+    vertical-align: top;
+    width: $container-portfolio-text-width;
 }
 
 .container-section {
-    padding: 30px;
+    box-sizing: border-box;
+    padding: $container-section-padding;
 }
 
 .paragraph-small {
+    box-sizing: border-box;
     padding-bottom: 3px;
     padding-top: 3px;
 }
@@ -65,20 +97,25 @@ p {
 /* Images */
 .image-logo-portfolio {
     display: inline-block;
-    height: 200px;
-    margin-right: 40px;
-    width: 200px;
+    height: $image-portfolio-height;
+    margin-right: $image-portolio-margin;
+    width: $image-portfolio-width;
 }
 
 .image-logo-link {
     display: inline-block;
-    height: 12px;
-    margin-right: 10px;
-    width: 12px;
+    height: $image-portfolio-link-height;
+    margin-right: $spacing-small;
+    width: $image-portfolio-link-width;
 }
 
 /* Text */
 .label-links {
+    @include font-small-bold;
+    color: $color-text-light;
+}
+
+.label-technologies {
     @include font-small-bold;
     color: $color-text-light;
 }
@@ -89,9 +126,18 @@ p {
     display: inline;
 }
 
-.label-technologies {
-    @include font-small-bold;
-    color: $color-text-light;
+.link-footer {
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all 1s ease;
+
+    &:hover {
+        color: $color-text-light-hover;
+    }
+}
+
+.portfolio-header-link {
+    text-decoration: none;
 }
 
 .technologies {
