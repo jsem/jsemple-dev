@@ -8,6 +8,7 @@ $spacing-extra-large: 40px;
 
 //container sizes
 $container-app-width: 900px;
+$container-app-width-small: 600px;
 $container-header-padding: $spacing-extra-large;
 $container-portfolio-padding: $spacing-medium;
 $container-section-padding: $spacing-large;
@@ -17,7 +18,10 @@ $image-portfolio-link-height: 12px;
 $image-portfolio-link-width: 12px;
 $image-portfolio-height: 250px;
 $image-portfolio-width: 250px;
+$image-portfolio-height-small: 170px;
+$image-portfolio-width-small: 170px;
 $image-portolio-margin: $spacing-extra-large;
 
 //calculated fields
 $container-portfolio-text-width: $container-app-width - ($container-section-padding * 2) - ($container-portfolio-padding * 2) - $image-portfolio-width - $image-portolio-margin;
+$container-portfolio-text-width-small: $container-app-width-small - ($container-section-padding * 2) - ($container-portfolio-padding * 2) - $image-portfolio-width-small - $image-portolio-margin;

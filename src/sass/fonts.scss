@@ -35,3 +35,40 @@ $font-family-main: Helvetica, sans-serif;
     @include font-small;
     font-weight: bold;
 }
+
+
+/* Small fonts for mobile devices */
+@mixin font-h1-small {
+    font-family: $font-family-main;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@mixin font-h2-small {
+    font-family: $font-family-main;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@mixin font-h3-small {
+    font-family: $font-family-main;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@mixin font-main-small {
+    font-family: $font-family-main;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+@mixin font-small-small {
+    font-family: $font-family-main;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+@mixin font-small-bold-small {
+    @include font-small-small;
+    font-weight: bold;
+}

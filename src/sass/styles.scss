@@ -18,6 +18,7 @@ a {
 
 body {
     @include font-main;
+    background: $color-background-body;
     color: $color-text;
 }
 
@@ -42,7 +43,8 @@ p {
 }
 
 /* Containers */
-.container-app {
+.container-content {
+    background: $color-background-content;
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
@@ -57,6 +59,9 @@ p {
 .container-footer-inner {
     box-sizing: border-box;
     padding: $container-section-padding;
+    margin-left: auto;
+    margin-right: auto;
+    width: $container-app-width;
 }
 
 .container-header {
@@ -143,4 +148,91 @@ p {
 .technologies {
     @include font-small;
     color: $color-text-light;
+}
+
+@media only screen and (max-width: 910px) {
+    body {
+        @include font-main-small;
+        background: $color-background-body;
+        color: $color-text;
+    }
+    
+    h1 {
+        @include font-h1-small;
+    }
+    
+    h2 {
+        @include font-h2-small;
+        padding: $spacing-medium;
+        padding-left: $spacing-small;
+        padding-right: $spacing-small;
+    }
+    
+    h3 {
+        @include font-h3-small;
+        padding: $spacing-small;
+    }
+    
+    .container-content {
+        width: $container-app-width-small;
+    }
+
+    .container-footer-inner {
+        width: $container-app-width-small;
+    }
+
+    .container-portfolio-text {
+        width: $container-portfolio-text-width-small;
+    }
+
+    .image-logo-portfolio {
+        display: inline-block;
+        height: $image-portfolio-height-small;
+        margin-right: $image-portolio-margin;
+        width: $image-portfolio-width-small;
+    }
+}
+
+@media only screen and (max-width: 610px) {
+    body {
+        @include font-main-small;
+        background: $color-background-body;
+        color: $color-text;
+    }
+    
+    h1 {
+        @include font-h1-small;
+    }
+    
+    h2 {
+        @include font-h2-small;
+        padding: $spacing-medium;
+        padding-left: $spacing-small;
+        padding-right: $spacing-small;
+    }
+    
+    h3 {
+        @include font-h3-small;
+        padding: $spacing-small;
+    }
+    
+    .container-content {
+        width: auto;
+    }
+
+    .container-footer-inner {
+        width: auto;
+    }
+
+    .container-portfolio-text {
+        display: block;
+        width: auto;
+    }
+
+    .image-logo-portfolio {
+        display: block;
+        height: $image-portfolio-height-small;
+        margin-right: 0px;
+        width: $image-portfolio-width-small;
+    }
 }

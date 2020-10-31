@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class ContainerCenter extends Component {
+class ContainerContent extends Component {
     render() {
         return (
-            <div className='container-app'>
+            <div className='container-content'>
                 {this.props.children}
             </div>
         );
     }
 }
 
-export default ContainerCenter;
+export default ContainerContent;

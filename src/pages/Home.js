@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ContainerCenter from '../components/ContainerCenter';
+import ContainerContent from '../components/ContainerContent';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SectionAboutMe from '../components/SectionAboutMe';
@@ -15,11 +15,11 @@ class Home extends Component {
         return (
             <div className='container-outer'>
                 <Header links={Links}/>
-                <ContainerCenter>
+                <ContainerContent>
                     <SectionAboutMe details={Details}/>
                     <SectionContact email={EmailAddress}/>
                     <SectionPortfolio items={PortfolioItems}/>
-                </ContainerCenter>
+                </ContainerContent>
                 <Footer links={Links}/>
             </div>
         );
