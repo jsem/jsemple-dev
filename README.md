@@ -7,6 +7,7 @@ A simple website built using HTML, Sass, and ReactJS
 ## Installation
 To build and run the website you will need to install:
 - [**nodejs**](https://nodejs.org/en/download/)  
+  
 Then run:
 - `npm install`
 
