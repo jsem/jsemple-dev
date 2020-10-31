@@ -1,0 +1,100 @@
+/* Styles for the website */
+
+//includes
+@import "colors.scss";
+@import "fonts.scss";
+@import "reset.scss";
+
+a {
+    color: inherit;
+}
+
+body {
+    @include font-main;
+    color: $color-text;
+}
+
+h1 {
+    @include font-h1;
+}
+
+h2 {
+    @include font-h2;
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h3 {
+    @include font-h3;
+    padding: 10px;
+}
+
+p {
+    padding: 10px;
+}
+
+/* Containers */
+.container-header {
+    background: $color-background-header;
+    padding: 40px;
+
+    h1 {
+        color: $color-text-header;
+        text-align: center;
+    }
+}
+
+.container-portfolio {
+    padding: 20px;
+}
+
+.container-portfolio-text {
+    display: inline-block;
+}
+
+.container-section {
+    padding: 30px;
+}
+
+.paragraph-small {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+/* Images */
+.image-logo-portfolio {
+    display: inline-block;
+    height: 200px;
+    margin-right: 40px;
+    width: 200px;
+}
+
+.image-logo-link {
+    display: inline-block;
+    height: 12px;
+    margin-right: 10px;
+    width: 12px;
+}
+
+/* Text */
+.label-links {
+    @include font-small-bold;
+    color: $color-text-light;
+}
+
+.link {
+    @include font-small;
+    color: $color-text-light;
+    display: inline;
+}
+
+.label-technologies {
+    @include font-small-bold;
+    color: $color-text-light;
+}
+
+.technologies {
+    @include font-small;
+    color: $color-text-light;
+}
