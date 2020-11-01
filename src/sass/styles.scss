@@ -20,6 +20,7 @@ body {
     @include font-main;
     background: $color-background-body;
     color: $color-text;
+    line-height: 2;
 }
 
 h1 {
