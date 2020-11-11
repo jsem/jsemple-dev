@@ -151,6 +151,12 @@ p {
     color: $color-text-light;
 }
 
+.post-date {
+    @include font-small;
+    color: $color-text-light;
+    padding-top: 0px;
+}
+
 @media only screen and (max-width: 910px) {
     body {
         @include font-main-small;

@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import ContainerContent from '../components/ContainerContent';
+import Error from '../components/Error';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import SectionAboutMe from '../components/SectionAboutMe';
-import SectionContact from '../components/SectionContact';
-import SectionPortfolio from '../components/SectionPortfolio';
-import SectionPosts from '../components/SectionPosts';
-import { EmailAddress } from '../constants/Constants';
-import Details from '../constants/Details';
+import Loading from '../components/Loading';
+import PostDetails from '../components/PostDetails';
 import Links from '../constants/Links';
-import PortfolioItems from '../constants/PortfolioItems';
 
-class Home extends Component {
+class Post extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             error: null,
-            posts: null,
+            post: null,
         }
     }
 
@@ -26,34 +22,39 @@ class Home extends Component {
     }
 
     loadData = () => {
-        fetch('http://localhost:8080/api/v1/post').then(response => {
+        fetch(`http://localhost:8080/api/v1/post/${this.props.identifier}`).then(response => {
             if (response.status === 200) {
                 return response.json();
             } else {
-                throw new Error('Could not retrieve posts');
+                throw new Error('Could not retrieve post');
             }
         }).then(json => {
+            console.log(json);
             this.setState({
                 error: null,
-                posts: json,
+                post: json,
             });
         }).catch(error => {
             this.setState({
                 error: error,
-                posts: null,
+                post: null,
             });
         })
     }
-    
+
     render() {
         return (
             <div className='container-outer'>
                 <Header links={Links}/>
                 <ContainerContent>
-                    <SectionAboutMe details={Details}/>
-                    <SectionContact email={EmailAddress}/>
-                    <SectionPortfolio items={PortfolioItems}/>
-                    <SectionPosts error={this.state.error} posts={this.state.posts}/>
+                {
+                    this.state.error ?
+                        <Error message={'Could not find post'}/>
+                    : this.state.post ?
+                        <PostDetails {...this.state.post}/>
+                    :
+                        <Loading/>
+                }
                 </ContainerContent>
                 <Footer links={Links}/>
             </div>
@@ -61,4 +62,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Post;

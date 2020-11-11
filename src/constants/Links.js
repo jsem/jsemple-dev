@@ -11,6 +11,10 @@ const Links = [
         title: 'Portfolio',
         link: 'portfolio',
     },
+    {
+        title: 'Posts',
+        link: 'posts',
+    },
 ]
 
 export default Links;

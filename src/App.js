@@ -1,9 +1,20 @@
 import './sass/styles.scss';
-import  Home from './pages/Home';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Post from './pages/Post';
 
 function App() {
     return (
-        <Home/>
+        <BrowserRouter>
+            <Switch>
+                <Route path='/post/:identifier' render={ props => 
+                    <Post identifier={props.match.params.identifier}/>
+                } />
+                <Route path='/' render={ () => 
+                    <Home/>
+                } />
+            </Switch>
+        </BrowserRouter>
     );
 }
 
