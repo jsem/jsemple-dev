@@ -167,6 +167,10 @@ p {
     padding-bottom: 0px;
 }
 
+.post-summary {
+    padding-bottom: $container-section-padding;
+}
+
 .technologies {
     @include font-small;
     color: $color-text-light;
