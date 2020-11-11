@@ -22,34 +22,28 @@ const portfolioItems = [
             },
         ],
     },
-    // {
-    //     id: 'springboot-webapp',
-    //     title: 'Springboot Webapp',
-    //     description: 'A springboot based web project. Includes a front end angular web app and a backend springboot app.',
-    //     link: WebsiteLink,
-    //     technologyLink: 'https://spring.io/projects/spring-boot',
-    //     technologyImage: 'images/springboot-logo.png',
-    //     technologyImageAlt: 'springboot logo',
-    //     technologies: [
-    //         'java',
-    //         'spring',
-    //         'springboot',
-    //         'hibernate',
-    //         'angular',
-    //     ],
-    //     links: [
-    //         {
-    //             link: 'https://github.com/jsem/springboot-backend',
-    //             image: 'images/github-logo.png',
-    //             imageAlt: 'github logo,'
-    //         },
-    //         {
-    //             link: 'https://github.com/jsem/springboot-web',
-    //             image: 'images/github-logo.png',
-    //             imageAlt: 'github logo,'
-    //         },
-    //     ],
-    // },
+    {
+        id: 'springboot-backend',
+        title: 'Springboot Backend',
+        description: 'A springboot based backend REST API. Provides post data for the portfolio website.',
+        link: `${WebsiteLink}/api/v1/post`,
+        technologyLink: 'https://spring.io/projects/spring-boot',
+        technologyImage: 'images/springboot-logo.png',
+        technologyImageAlt: 'springboot logo',
+        technologies: [
+            'java',
+            'spring',
+            'springboot',
+            'hibernate',
+        ],
+        links: [
+            {
+                link: 'https://github.com/jsem/springboot-backend',
+                image: 'images/github-logo.png',
+                imageAlt: 'github logo,'
+            },
+        ],
+    },
     {
         id: 'ansible-infrastructure-as-code',
         title: 'Ansible IAC',
