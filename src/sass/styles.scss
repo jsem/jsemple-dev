@@ -89,9 +89,13 @@ p {
     width: $container-portfolio-text-width;
 }
 
-.container-section {
+.container-section, .container-post {
     box-sizing: border-box;
     padding: $container-section-padding;
+}
+
+.container-post-body {
+    padding: $spacing-small;
 }
 
 .paragraph-small {
@@ -142,13 +146,20 @@ p {
     }
 }
 
-.portfolio-header-link, .post-header-link {
+.portfolio-header-link, .post-back, .post-header-link {
     text-decoration: none;
 }
 
-.technologies {
+.post-back {
     @include font-small;
     color: $color-text-light;
+    padding-left: $spacing-small;
+}
+
+.post-date {
+    @include font-small;
+    color: $color-text-light;
+    padding-top: 0px;
 }
 
 .post-header {
@@ -156,10 +167,9 @@ p {
     padding-bottom: 0px;
 }
 
-.post-date {
+.technologies {
     @include font-small;
     color: $color-text-light;
-    padding-top: 0px;
 }
 
 @media only screen and (max-width: 910px) {

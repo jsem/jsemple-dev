@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import Section from './Section';
+import { Link } from 'react-router-dom';
 import { formatDate } from '../util/Format';
 
 class PostDetails extends Component {
     render() {
         return (
-            <Section id={this.props.identifier} title={this.props.title} headerClass={'post-header'}>
+            <div id={this.props.id} className='container-post'>
+                <Link className={'post-back'} to={'/'}>&lt; Back</Link>
+                <h2 className={'post-header'}>{this.props.title}</h2>
                 <p className={'post-date'}>{formatDate(this.props.createdOn)}</p>
-                <ReactMarkdown>
-                    {this.props.body}
-                </ReactMarkdown>
-            </Section>
+                <div id={this.props.id} className='container-post-body'>
+                    <ReactMarkdown children={this.props.body}/>
+                </div>
+            </div>
         );
     }
 }
