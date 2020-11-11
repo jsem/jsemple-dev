@@ -22,7 +22,7 @@ class Post extends Component {
     }
 
     loadData = () => {
-        fetch(`http://localhost:8080/api/v1/post/${this.props.identifier}`).then(response => {
+        fetch(`/api/v1/post/${this.props.identifier}`).then(response => {
             if (response.status === 200) {
                 return response.json();
             } else {

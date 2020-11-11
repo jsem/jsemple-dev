@@ -26,7 +26,7 @@ class Home extends Component {
     }
 
     loadData = () => {
-        fetch('http://localhost:8080/api/v1/post').then(response => {
+        fetch('/api/v1/post').then(response => {
             if (response.status === 200) {
                 return response.json();
             } else {
