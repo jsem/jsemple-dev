@@ -6,7 +6,7 @@ class PostSummary extends Component {
     render() {
         return (
             <div className='post-summary'>
-                <Link to={`/post/${this.props.identifier}`}><h3>{this.props.title}</h3></Link>
+                <Link className='post-header-link' to={`/post/${this.props.identifier}`}><h3 className={'post-header'}>{this.props.title}</h3></Link>
                 <p className={'post-date'}>{formatDate(this.props.createdOn)}</p>
                 <p>{this.props.summary}</p>
             </div>

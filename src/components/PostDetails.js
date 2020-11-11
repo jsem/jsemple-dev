@@ -6,7 +6,7 @@ import { formatDate } from '../util/Format';
 class PostDetails extends Component {
     render() {
         return (
-            <Section id={this.props.identifier} title={this.props.title}>
+            <Section id={this.props.identifier} title={this.props.title} headerClass={'post-header'}>
                 <p className={'post-date'}>{formatDate(this.props.createdOn)}</p>
                 <ReactMarkdown>
                     {this.props.body}

@@ -142,13 +142,18 @@ p {
     }
 }
 
-.portfolio-header-link {
+.portfolio-header-link, .post-header-link {
     text-decoration: none;
 }
 
 .technologies {
     @include font-small;
     color: $color-text-light;
+}
+
+.post-header {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .post-date {
