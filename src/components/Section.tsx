@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import ISection from '../interfaces/Section';
 
-class Section extends Component {
+class Section extends Component<ISection> {
     render() {
         return (
             <div id={this.props.id} className='container-section'>

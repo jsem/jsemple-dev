@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import PortfolioItem from './PortfolioItem';
 import Section from './Section';
+import IPortfolioItem from '../interfaces/PortfolioItem';
 
-class SectionPortfolio extends Component {
+interface Props {
+    items : Array<IPortfolioItem>;
+}
+
+class SectionPortfolio extends Component<Props> {
     render() {
         return (
             <Section id='portfolio' title='Portfolio'>

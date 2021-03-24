@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../util/Format';
+import Post from '../interfaces/Post';
 
-class PostSummary extends Component {
+class PostSummary extends Component<Post> {
     render() {
         return (
             <div className='post-summary'>

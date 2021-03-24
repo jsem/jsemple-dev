@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
-class AboutMeDetail extends Component {
+interface Props {
+    text : string;
+}
+
+class AboutMeDetail extends Component<Props> {
     render() {
         return (
             <p>{this.props.text}</p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import MenuItem from '../interfaces/MenuLink';
 
-class FooterLink extends Component {
+class FooterLink extends Component<MenuItem> {
     navigate = () => {
         if (window.location.pathname === '/') {
             document.getElementById(this.props.link).scrollIntoView({behavior: 'smooth'});

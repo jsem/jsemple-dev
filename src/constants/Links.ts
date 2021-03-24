@@ -1,4 +1,6 @@
-const Links = [
+import MenuLink from '../interfaces/MenuLink';
+
+const Links : Array<MenuLink> = [
     {
         title: 'About Me',
         link: 'about-me',

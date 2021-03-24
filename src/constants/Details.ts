@@ -1,4 +1,4 @@
-const Details = [
+const Details : Array<string> = [
     'My name is James Semple. I am a developer based in Melbourne, Australia.',
     'I attended Deakin University where I completed the Bachelor of Information Technology (Games Design and Development) with Distinction in 2011. Afterwards I completed an honours year, being awarded the Bachelor of Information Technoloy (Honours) with First Class Honours.',
     'On completion of my studies I began working full time in the industry, primarily as a web developer.',

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PortfolioLink from './PortfolioLink';
 import PortfolioTechnology from './PortfolioTechnology';
+import IPortfolioItem from '../interfaces/PortfolioItem';
 
-class PortfolioItem extends Component {
+class PortfolioItem extends Component<IPortfolioItem> {
     render() {
         return (
             <div id={this.props.id} className='container-portfolio'>

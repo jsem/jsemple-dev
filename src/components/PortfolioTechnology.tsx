@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
-class PortfolioTechnology extends Component {
+interface Props {
+    title : string;
+}
+
+class PortfolioTechnology extends Component<Props> {
     render() {
         return (
             <span className='technologies'> {this.props.title}</span>

@@ -1,6 +1,7 @@
 import { WebsiteLink, WebsiteTitle } from './Constants';
+import PortfolioItem from '../interfaces/PortfolioItem';
 
-const portfolioItems = [
+const portfolioItems : Array<PortfolioItem> = [
     {
         id: WebsiteTitle,
         title: WebsiteTitle,
@@ -13,6 +14,7 @@ const portfolioItems = [
             'html',
             'sass',
             'reactjs',
+            'typescript',
         ],
         links: [
             {

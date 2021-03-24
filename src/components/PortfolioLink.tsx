@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import IPortfolioLink from '../interfaces/PortfolioLink';
 
-class PortfolioLink extends Component {
+class PortfolioLink extends Component<IPortfolioLink> {
     render() {
         return (
             <p className='paragraph-small'>

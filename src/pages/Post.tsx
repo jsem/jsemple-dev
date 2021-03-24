@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
 import ContainerContent from '../components/ContainerContent';
-import Error from '../components/Error';
+import ErrorDisplay from '../components/Error';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import PostDetails from '../components/PostDetails';
 import Links from '../constants/Links';
+import IPost from '../interfaces/Post';
 
-class Post extends Component {
-    constructor(props) {
-        super(props);
+interface Props {
+    identifier : string
+}
 
-        this.state = {
-            error: null,
-            post: null,
-        }
+interface State {
+    error : string;
+    post : IPost;
+}
+
+class Post extends Component<Props, State> {
+    public readonly state: Readonly<State> = {
+        error: null,
+        post: null,
     }
 
-    componentDidMount() {
+    public componentDidMount() {
         this.loadData();
     }
 
-    loadData = () => {
+    private loadData = () => {
         fetch(`/api/v1/post/${this.props.identifier}`).then(response => {
             if (response.status === 200) {
                 return response.json();
@@ -29,7 +35,6 @@ class Post extends Component {
                 throw new Error('Could not retrieve post');
             }
         }).then(json => {
-            console.log(json);
             this.setState({
                 error: null,
                 post: json,
@@ -42,14 +47,14 @@ class Post extends Component {
         })
     }
 
-    render() {
+    public render() {
         return (
             <div className='container-outer'>
                 <Header links={Links}/>
                 <ContainerContent>
                 {
                     this.state.error ?
-                        <Error message={'Could not find post'}/>
+                        <ErrorDisplay message={'Could not find post'}/>
                     : this.state.post ?
                         <PostDetails {...this.state.post}/>
                     :

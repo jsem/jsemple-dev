@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import AboutMeDetail from './AboutMeDetail';
 import Section from './Section';
 
-class SectionAboutMe extends Component {
+interface Props {
+    details : Array<string>
+}
+
+class SectionAboutMe extends Component<Props> {
     render() {
         return (
             <Section id='about-me' title='About Me'>

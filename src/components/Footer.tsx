@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import FooterLink from './FooterLink';
+import MenuLink from '../interfaces/MenuLink';
 
-class Footer extends Component {
+interface Props {
+    links : Array<MenuLink>
+}
+
+class Footer extends Component<Props> {
     render() {
         return (
             <div id='footer' className='container-footer'>

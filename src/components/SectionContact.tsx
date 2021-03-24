@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Section from './Section';
 
-class SectionContact extends Component {
+interface Props {
+    email : string;
+}
+
+class SectionContact extends Component<Props> {
     render() {
         return (
             <Section id='contact' title='Contact'>

@@ -10,22 +10,28 @@ import { EmailAddress } from '../constants/Constants';
 import Details from '../constants/Details';
 import Links from '../constants/Links';
 import PortfolioItems from '../constants/PortfolioItems';
+import Post from '../interfaces/Post';
 
-class Home extends Component {
-    constructor(props) {
-        super(props);
+interface Props {
 
-        this.state = {
-            error: null,
-            posts: null,
-        }
+}
+
+interface State {
+    error : string;
+    posts : Array<Post>;
+}
+
+class Home extends Component<Props, State> {
+    public readonly state: Readonly<State> = {
+        error: null,
+        posts: null,
     }
 
-    componentDidMount() {
+    public componentDidMount() {
         this.loadData();
     }
 
-    loadData = () => {
+    private loadData = () => {
         fetch('/api/v1/post').then(response => {
             if (response.status === 200) {
                 return response.json();
@@ -45,7 +51,7 @@ class Home extends Component {
         })
     }
     
-    render() {
+    public render() {
         return (
             <div className='container-outer'>
                 <Header links={Links}/>
