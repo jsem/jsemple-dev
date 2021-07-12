@@ -1,5 +1,5 @@
 import moment from 'moment';
 
 export function formatDate(timestamp : string) {
-    return moment(timestamp).format('MMM Do YYYY');
+    return moment(parseInt(timestamp, 10)).format('MMM Do YYYY');
 }

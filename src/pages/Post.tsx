@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { gql, useQuery } from '@apollo/client';
 import ContainerContent from '../components/ContainerContent';
 import ErrorDisplay from '../components/Error';
 import Footer from '../components/Footer';
@@ -6,65 +7,48 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import PostDetails from '../components/PostDetails';
 import Links from '../constants/Links';
-import IPost from '../interfaces/Post';
+import * as GetPost from './__generated__/GetPost';
+
+export const GET_POST = gql`
+    query GetPost($identifier: String!) {
+        post(identifier: $identifier) {
+            id
+            identifier
+            title
+            body
+            summary
+            visible
+            createdOn
+            updatedOn
+        }
+    }
+`;
 
 interface Props {
     identifier : string
 }
 
-interface State {
-    error : string;
-    post : IPost;
-}
+const Post: React.FC<Props> = ({ identifier }) => {
+    const { data, loading, error } = useQuery<GetPost.GetPost, GetPost.GetPostVariables>(GET_POST, { variables: { identifier } });
 
-class Post extends Component<Props, State> {
-    public readonly state: Readonly<State> = {
-        error: null,
-        post: null,
-    }
-
-    public componentDidMount() {
-        this.loadData();
-    }
-
-    private loadData = () => {
-        fetch(`/api/v1/post/${this.props.identifier}`).then(response => {
-            if (response.status === 200) {
-                return response.json();
-            } else {
-                throw new Error('Could not retrieve post');
+    return (
+        <div className='container-outer'>
+            <Header links={Links}/>
+            <ContainerContent>
+            {
+                error ?
+                    <ErrorDisplay message={'Could not find post'}/>
+                : loading ?
+                    <Loading/>
+                : data ?
+                    <PostDetails {...data.post}/>
+                :
+                    <ErrorDisplay message={'Could not find post'}/>
             }
-        }).then(json => {
-            this.setState({
-                error: null,
-                post: json,
-            });
-        }).catch(error => {
-            this.setState({
-                error: error,
-                post: null,
-            });
-        })
-    }
-
-    public render() {
-        return (
-            <div className='container-outer'>
-                <Header links={Links}/>
-                <ContainerContent>
-                {
-                    this.state.error ?
-                        <ErrorDisplay message={'Could not find post'}/>
-                    : this.state.post ?
-                        <PostDetails {...this.state.post}/>
-                    :
-                        <Loading/>
-                }
-                </ContainerContent>
-                <Footer links={Links}/>
-            </div>
-        );
-    }
+            </ContainerContent>
+            <Footer links={Links}/>
+        </div>
+    );
 }
 
 export default Post;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../util/Format';
-import Post from '../interfaces/Post';
+import * as GetPosts from '../pages/__generated__/GetPosts';
 
-class PostSummary extends Component<Post> {
+class PostSummary extends Component<GetPosts.GetPosts_posts> {
     render() {
         return (
             <div className='post-summary'>
