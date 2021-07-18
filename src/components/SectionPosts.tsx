@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ApolloError } from '@apollo/client';
 import Error from './Error';
 import Loading from './Loading';
@@ -13,23 +13,21 @@ interface Props {
     error : ApolloError;
 }
 
-class SectionPosts extends Component<Props> {
-    render() {
-        return (
-            <Section id='posts' title='Posts'>
-            {
-                this.props.error ?
-                    <Error message={'Could not find posts'}/>
-                : this.props.loading ?
-                    <Loading/>
-                : this.props.data && this.props.data.posts && this.props.data.posts.length > 0 ?
-                    this.props.data.posts.map(post => <PostSummary key={post.identifier} {...post}/>)
-                :
-                    <NoPosts/>
-            }
-            </Section>
-        );
-    }
+const SectionPosts: React.FC<Props> = (props) => {
+    return (
+        <Section id='posts' title='Posts'>
+        {
+            props.error ?
+                <Error message={'Could not find posts'}/>
+            : props.loading ?
+                <Loading/>
+            : props.data?.posts?.length > 0 ?
+                props.data.posts.map(post => <PostSummary key={post.identifier} {...post}/>)
+            :
+                <NoPosts/>
+        }
+        </Section>
+    );
 }
 
 export default SectionPosts;

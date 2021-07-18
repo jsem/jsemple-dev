@@ -11,6 +11,11 @@ To build and run the website you will need to install:
 Then run:
 - `npm install`
 
+## Regenerate GraphQL Schema
+Start the backend server locally at localhost:4000, then:
+- `npm run download-schema`
+- `npm run generate-schema`
+
 ## Testing
 Run the dev webserver using:
 - `npm start`

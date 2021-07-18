@@ -1,5 +1,6 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
+import { Link } from 'react-router-dom';
 import ContainerContent from '../components/ContainerContent';
 import ErrorDisplay from '../components/Error';
 import Footer from '../components/Footer';
@@ -37,13 +38,22 @@ const Post: React.FC<Props> = ({ identifier }) => {
             <ContainerContent>
             {
                 error ?
-                    <ErrorDisplay message={'Could not find post'}/>
+                    <div className='container-post'>
+                        <Link className={'post-back'} to={'/'}>&lt; Back</Link>
+                        <ErrorDisplay message={'Could not find post'}/>
+                    </div>
                 : loading ?
-                    <Loading/>
-                : data ?
+                    <div className='container-post'>
+                        <Link className={'post-back'} to={'/'}>&lt; Back</Link>
+                        <Loading/>
+                    </div>
+                : data?.post ?
                     <PostDetails {...data.post}/>
                 :
-                    <ErrorDisplay message={'Could not find post'}/>
+                    <div className='container-post'>
+                        <Link className={'post-back'} to={'/'}>&lt; Back</Link>
+                        <ErrorDisplay message={'Could not find post'}/>
+                    </div>
             }
             </ContainerContent>
             <Footer links={Links}/>
