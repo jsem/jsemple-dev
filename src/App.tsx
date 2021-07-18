@@ -1,12 +1,11 @@
 import './sass/styles.scss';
-import { ApolloClient, NormalizedCacheObject, ApolloProvider } from '@apollo/client';
-import { cache } from './cache';
+import { ApolloClient, NormalizedCacheObject, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Post from './pages/Post';
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-    cache,
+    cache: new InMemoryCache({}),
     uri: 'http://localhost:4000/graphql',
 });
 
