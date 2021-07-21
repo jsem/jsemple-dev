@@ -6,7 +6,7 @@ import Post from './pages/Post';
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
     cache: new InMemoryCache({}),
-    uri: 'http://localhost:4000/graphql',
+    uri: '/graphql',
 });
 
 function App() {
