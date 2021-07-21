@@ -1,18 +1,20 @@
-FROM node:lts-alpine as build
+FROM node:lts-alpine AS builder
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm ci
-
-RUN npm run build
+RUN npm ci && npm run build
 
 FROM nginx:stable-alpine
 
-COPY --from=build /app/build /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
 
-COPY --from=build /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+RUN rm -rf ./*
+
+COPY --from=builder /app/build .
+
+COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
