@@ -34,7 +34,6 @@ interface Props {
 
 const Home: React.FC<Props> = () => {
     const { data, loading, error } = useQuery<GetPosts.GetPosts>(GET_POSTS);
-    console.log(data, loading, error);
     
     return (
         <div className='container-outer'>
