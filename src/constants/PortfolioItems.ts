@@ -47,6 +47,51 @@ const portfolioItems : Array<PortfolioItem> = [
         ],
     },
     {
+        id: 'apollo-backend',
+        title: 'Apollo Backend',
+        description: 'A nodejs and apollo based backend GraphQL API. Provides post data for the portfolio website.',
+        link: `${WebsiteLink}/graphql`,
+        technologyLink: 'https://www.apollographql.com/',
+        technologyImage: 'images/apollo-logo.png',
+        technologyImageAlt: 'apollo logo',
+        technologies: [
+            'nodejs',
+            'apollo',
+            'typeorm',
+            'typescript',
+        ],
+        links: [
+            {
+                link: 'https://github.com/jsem/apollo-backend',
+                image: 'images/github-logo.png',
+                imageAlt: 'github logo,'
+            },
+        ],
+    },
+    {
+        id: 'docker-iac',
+        title: 'Docker IAC',
+        description: 'An infrastructure as code project using docker compose.',
+        link: `https://github.com/jsem/portfolio-docker`,
+        technologyLink: 'https://www.docker.com/',
+        technologyImage: 'images/docker-logo.png',
+        technologyImageAlt: 'docker logo',
+        technologies: [
+            'docker',
+            'docker-compose',
+            'traefik',
+            'postgresql',
+            'watchtower',
+        ],
+        links: [
+            {
+                link: 'https://github.com/jsem/portfolio-docker',
+                image: 'images/github-logo.png',
+                imageAlt: 'github logo,'
+            },
+        ],
+    },
+    {
         id: 'ansible-infrastructure-as-code',
         title: 'Ansible IAC',
         description: 'An infrastructure as code project using ansible.',
